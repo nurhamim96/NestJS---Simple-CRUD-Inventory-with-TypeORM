@@ -1,6 +1,5 @@
 import { Body, Controller, Delete, Get, HttpCode, Param, Post, Put, Query, UseInterceptors } from '@nestjs/common';
 import { ApiBadRequestResponse, ApiCreatedResponse, ApiNoContentResponse, ApiNotFoundResponse, ApiOkResponse, ApiOperation } from '@nestjs/swagger';
-import { type } from 'os';
 import { ProductsDTO, ProductsResponse, ProductsResponses } from 'src/dtos/products.dto';
 import ProductsEntity from 'src/models/product.entity';
 import { ResponseRebuildInterceptor } from 'src/response/response.interceptor';

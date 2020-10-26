@@ -6,6 +6,7 @@ import ConfigModule from './config/config.module';
 import DatabaseConnectionConfig from './config/database.config';
 import { ProductsModule } from './products/products.module';
 import { OrdersModule } from './orders/orders.module';
+import { PurchasesModule } from './purchases/purchases.module';
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { OrdersModule } from './orders/orders.module';
       useClass: DatabaseConnectionConfig,
     }),
     ProductsModule,
-    OrdersModule
+    OrdersModule,
+    PurchasesModule
   ],
   controllers: [AppController],
   providers: [AppService],
