@@ -36,7 +36,7 @@ export class PurchasesService {
 
     async findWithPaging(queryParams: PurchasesQueryDTO): Promise<PurchasesQueryResult> {
         const offset: number = queryParams.page > 1 ? (queryParams.rowsPerPage * (queryParams.page - 1)) : 0;
-        let query: SelectQueryBuilder<PurchasesEntity> = this.purchasesRepository.createQueryBuilder('purchasesAlias');
+        let query: SelectQueryBuilder<PurchasesEntity> = this.purchasesRepository.createQueryBuilder('purchasesAlias').innerJoinAndSelect('purchasesAlias.productId', 'product');
 
         if(queryParams.term) {
             let {term} = queryParams;

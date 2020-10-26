@@ -15,7 +15,7 @@ export default class PurchasesEntity {
     @Column()
     @ManyToOne(() => ProductsEntity, (product: ProductsEntity) => product.id, {cascade: true})
     @JoinColumn({name: 'productId'})
-    productId: PurchasesEntity;
+    productId: ProductsEntity;
 
     @Column()
     numberReceived: number;

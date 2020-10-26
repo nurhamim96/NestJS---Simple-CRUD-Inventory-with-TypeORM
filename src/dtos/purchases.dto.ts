@@ -1,3 +1,4 @@
+import ProductsEntity from "src/models/product.entity";
 import PurchasesEntity from "src/models/purchases.entity";
 import { PagingData, ResponseStatus } from "src/response/response.class";
 import { IApiResponse } from "src/response/response.interface";
@@ -5,7 +6,7 @@ import { IApiResponse } from "src/response/response.interface";
 export class PurchasesDTO {
     readonly id: string;
     readonly supplierId: string;
-    readonly productId: PurchasesEntity;
+    readonly productId: ProductsEntity;
     readonly numberReceived: number;
     readonly purchaseDate: Date;
 }
