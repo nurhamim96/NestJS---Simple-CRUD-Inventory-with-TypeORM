@@ -7,6 +7,7 @@ import DatabaseConnectionConfig from './config/database.config';
 import { ProductsModule } from './products/products.module';
 import { OrdersModule } from './orders/orders.module';
 import { PurchasesModule } from './purchases/purchases.module';
+import { SupplierModule } from './supplier/supplier.module';
 
 @Module({
   imports: [
@@ -17,7 +18,8 @@ import { PurchasesModule } from './purchases/purchases.module';
     }),
     ProductsModule,
     OrdersModule,
-    PurchasesModule
+    PurchasesModule,
+    SupplierModule
   ],
   controllers: [AppController],
   providers: [AppService],

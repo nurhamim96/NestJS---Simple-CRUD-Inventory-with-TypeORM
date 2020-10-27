@@ -31,7 +31,7 @@ export class PurchasesService {
     }
 
     async findAll(): Promise<PurchasesEntity[]> {
-        return await this.purchasesRepository.find({relations: ['productId']});
+        return await this.purchasesRepository.find({relations: ['productId', 'supplierId']});
     }
 
     async findWithPaging(queryParams: PurchasesQueryDTO): Promise<PurchasesQueryResult> {
