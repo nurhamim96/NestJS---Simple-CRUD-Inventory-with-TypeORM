@@ -1,4 +1,4 @@
-import { Column, Entity, Generated, JoinTable, ManyToMany, PrimaryColumn } from "typeorm";
+import { Column, Entity, Generated, JoinColumn, JoinTable, ManyToMany, ManyToOne, PrimaryColumn } from "typeorm";
 import ProductsEntity from "./product.entity";
 
 
@@ -21,8 +21,13 @@ export default class OrdersEntity {
     @Column()
     last: string;
 
-    @ManyToMany(() => ProductsEntity, (product: ProductsEntity) => product.id, {cascade: true})
-    @JoinTable({name: 'product_orders', joinColumn:{name: 'orders_id'}, inverseJoinColumn: {name: 'products_id'}})
+    // @ManyToMany(() => ProductsEntity, (product: ProductsEntity) => product.id, {cascade: true})
+    // @JoinTable({name: 'product_orders', joinColumn:{name: 'orders_id'}, inverseJoinColumn: {name: 'products_id'}})
+    // productId: ProductsEntity;
+    
+    @Column()
+    @ManyToOne(() => ProductsEntity, (product: ProductsEntity) => product.id, {cascade: true})
+    @JoinColumn({name: 'productId'})
     productId: ProductsEntity;
 
     @Column()
